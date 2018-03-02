@@ -2,7 +2,7 @@
 Configuring 802.1x wired authentication on OpenWrt/LEDE<br/><br/>
 OpenWrt 802.1x 拨号luci界面<br/><br/>
 ![screenshot](https://raw.githubusercontent.com/max0y/luci-app-cd8021x/master/screenshot.png)<br/>
-##安装 Install<br/>
+## 安装 Install<br/>
 1. 这个包的功能实现依赖于*wpad*，需要先卸载*wpad-mini*，再安装*wpad*
 ```
 opkg remove wpad-mini
@@ -14,7 +14,7 @@ opkg install wpad
 cd /tmp
 opkg install luci-app-cd8021x_*.ipk
 ```
-##编译 Compile<br/>
+## 编译 Compile<br/>
 使用 OpenWrt 的 [SDK][openwrt_sdk_url] 编译， SDK使用注意事项：[Using the SDK][openwrt_sdk_usage_url]
 ```bash
 # 解压下载好的 SDK
