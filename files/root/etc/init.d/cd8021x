@@ -1,0 +1,36 @@
+#!/bin/sh /etc/rc.common
+START=50
+
+run_cd8021x()
+{
+    local enable
+    config_get_bool enable $1 enable
+    
+    if [ $enable ]; then
+        local username
+        local password
+        local ifname
+        
+        config_get username $1 username
+        config_get password $1 password
+        config_get ifname $1 ifname
+        
+        killall wpa_supplicant
+        echo -e "ctrl_interface=/var/run/wpa_supplicant\nap_scan=0\nnetwork={\nkey_mgmt=IEEE8021X\neap=MD5\nidentity=\"$username\"\npassword=\"$password\"\neapol_flags=0\n}" > /tmp/cd8021x.conf
+        wpa_supplicant -B -c /tmp/cd8021x.conf -i$ifname -Dwired
+        
+        echo "cd802.1x client has started."
+    fi
+}
+
+start()
+{
+    config_load cd8021x
+    config_foreach run_cd8021x login
+}
+
+stop()
+{
+    killall wpa_supplicant    
+    echo "cd802.1x client has stoped."
+}
