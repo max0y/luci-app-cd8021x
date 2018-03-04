@@ -1,6 +1,7 @@
 require("luci.sys")
 
-m = Map("cd8021x", translate("cd802.1x client"), translate("Configure IEEE 802.1x wired authentication using wpa_supplicant, you should change your WAN interface protocol as \"<span style=\"color:red;\">DHCP client</span>\" first. <a href=\"network/wan\">click here to change</a>"))
+m = Map("cd8021x", translate("cd802.1x client"), 
+    translate("Configure IEEE 802.1x wired authentication, you may need to edit your WAN interface protocol as <i>DHCP client</i>  <a href=\"network\">here</a>."))
 
 s = m:section(TypedSection, "login", "")
 s.addremove = false
