@@ -1,7 +1,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=luci-app-cd8021x
-PKG_VERSION=1.0
+PKG_VERSION=1.1
 PKG_RELEASE:=1
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
@@ -17,7 +17,7 @@ define Package/luci-app-cd8021x
 endef
 
 define Package/luci-app-cd8021x/description
-	This package contains LuCI configuration pages for wired IEEE 802.1x client.
+	This package contains LuCI configuration pages for wired IEEE 802.1x authentication.
 endef
 
 define Build/Prepare
