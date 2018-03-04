@@ -1,30 +1,38 @@
 # luci-app-cd8021x
-Configuring 802.1x wired authentication on OpenWrt/LEDE<br/><br/>
-OpenWrt 802.1x 拨号luci界面<br/><br/>
+
+[README](README.md) | [中文说明](README_zh.md)
+
+Configure 802.1x wired authentication on OpenWrt/LEDE<br/>
+
 ![screenshot](https://raw.githubusercontent.com/max0y/luci-app-cd8021x/master/screenshot.png)<br/>
-## 安装 Install<br/>
-1. 这个包的功能实现依赖于*wpad*，需要先卸载*wpad-mini*，再安装*wpad*
-```
+## Install<br/>
+1. This package depends on *wpad*, you need to remove *wpad-mini* first
+```bash
+opkg update
 opkg remove wpad-mini
 opkg install wpad
 ```
-2. 然后在[release][release_url]页面下载最新版luci-app-cd8021x, 并将下载的ipk文件上传至路由器/tmp目录
-3. 安装luci-app-cd8021x
-```
+2. Then download the latest version of *luci-app-cd8021x* in the [release][release_url] page
+3. Upload the downloaded *ipk* file to the */tmp* directory of your router
+4. Install *luci-app-cd8021x*
+```bash
 cd /tmp
 opkg install luci-app-cd8021x_*.ipk
 ```
-## 编译 Compile<br/>
-使用 OpenWrt 的 [SDK][openwrt_sdk_url] 编译， SDK使用注意事项：[Using the SDK][openwrt_sdk_usage_url]
+## Compile<br/>
+If you want to build the package by yourself, please use OpenWrt [SDK][openwrt_sdk_url], and there are some offical guides about [using the SDK][openwrt_sdk_usage_url]
 ```bash
-# 解压下载好的 SDK
+# decompress the downloaded SDK
 tar -xvf openwrt-sdk-ar71xx-generic_gcc-*.tar.xz
 cd openwrt-sdk-ar71xx-*
-# Clone 项目
+
+# clone this repo
 git clone https://github.com/max0y/luci-app-cd8021x.git package/luci-app-cd8021x
-# 选择要编译的包 LuCI -> 3. Applications
+
+# run make menuconfig, and choose LuCI -> 3. Applications
 make menuconfig
-# 开始编译
+
+# start compiling
 make package/luci-app-cd8021x/compile V=99
 ```
 
