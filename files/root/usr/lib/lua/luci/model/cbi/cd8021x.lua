@@ -1,3 +1,6 @@
+-- Copyright (C) 2018 max0y <askmaxwork@gmail.com>
+-- Licensed to the public under the GNU General Public License v3.
+
 require("luci.sys")
 
 local eap_list = {

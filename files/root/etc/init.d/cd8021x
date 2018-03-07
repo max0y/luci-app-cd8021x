@@ -1,4 +1,8 @@
 #!/bin/sh /etc/rc.common
+
+# Copyright (C) 2018 max0y <askmaxwork@gmail.com>
+# Licensed to the public under the GNU General Public License v3.
+
 START=50
 
 run_cd8021x()
