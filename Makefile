@@ -1,8 +1,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=luci-app-cd8021x
-PKG_VERSION=1.1
+PKG_VERSION=1.2.0
 PKG_RELEASE:=1
+
+PKG_LICENSE:=GPLv3
+PKG_LICENSE_FILES:=LICENSE
+PKG_MAINTAINER:=max0y <askmaxwork@gmail.com>
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
 

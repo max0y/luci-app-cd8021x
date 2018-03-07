@@ -2,3 +2,4 @@ config login
 	option username ''
 	option password ''
 	option ifname 'eth0'
+	option eap 'MD5'
