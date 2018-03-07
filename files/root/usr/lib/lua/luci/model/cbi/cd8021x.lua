@@ -25,14 +25,14 @@ for k, v in ipairs(luci.sys.net.devices()) do
     end
 end
 
-local apply = luci.http.formvalue("cbi.apply")
-if apply then
-    io.popen("/etc/init.d/cd8021x restart")
-end
-
 eap = s:option(ListValue, "eap", translate("EAP"))
 for k, v in ipairs(eap_list) do
     eap:value(v)
+end
+
+local apply = luci.http.formvalue("cbi.apply")
+if apply then
+    io.popen("/etc/init.d/cd8021x restart")
 end
 
 return m
