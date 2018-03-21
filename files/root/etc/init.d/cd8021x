@@ -3,7 +3,7 @@
 # Copyright (C) 2018 max0y <askmaxwork@gmail.com>
 # Licensed to the public under the GNU General Public License v3.
 
-START=50
+START=65
 
 run_cd8021x()
 {
