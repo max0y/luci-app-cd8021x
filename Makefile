@@ -18,6 +18,7 @@ define Package/luci-app-cd8021x
 	SUBMENU:=3. Applications
 	TITLE:=a wired IEEE 802.1x client for Luci
 	PKGARCH:=all
+	DEPENDS:=+wpad
 endef
 
 define Package/luci-app-cd8021x/description
