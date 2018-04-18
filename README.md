@@ -4,9 +4,9 @@
 
 Configure 802.1x wired authentication on OpenWrt/LEDE<br/>
 
-![screenshot](https://raw.githubusercontent.com/max0y/luci-app-cd8021x/master/screenshot.png)<br/>
+![screenshot](https://raw.githubusercontent.com/max0y/luci-app-cd8021x/master/screenshot_en.png)<br/>
 ## Install<br/>
-1. This package depends on *wpad*, you need to remove *wpad-mini* first
+1. This package depends on *wpad*, you need to remove *wpad-mini* first, or you can manually download the *wpad* package from [OpenWrt packages site](https://downloads.openwrt.org/releases/17.01.4/packages/).
 ```bash
 opkg update
 opkg remove wpad-mini
@@ -28,6 +28,11 @@ cd openwrt-sdk-ar71xx-*
 
 # clone this repo
 git clone https://github.com/max0y/luci-app-cd8021x.git package/luci-app-cd8021x
+
+# complie po2lmo (if you don't have po2lmo)
+pushd package/luci-app-cd8021x/tool/po2lmo
+make && sudo make install
+popd
 
 # run make menuconfig, and choose LuCI -> 3. Applications
 make menuconfig

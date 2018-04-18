@@ -6,7 +6,7 @@ OpenWrt 802.1x 有线认证拨号界面<br/>
 
 ![screenshot](https://raw.githubusercontent.com/max0y/luci-app-cd8021x/master/screenshot_zh.png)<br/>
 ## 安装<br/>
-1. 这个包的功能实现依赖于*wpad*，需要先卸载*wpad-mini*，再安装*wpad*
+1. 这个包的功能实现依赖于*wpad*，需要先卸载*wpad-mini*，再安装*wpad*，也可以手动到OpenWrt[官方源](https://downloads.openwrt.org/releases/17.01.4/packages/)处下载*wpad*安装包
 ```bash
 opkg update
 opkg remove wpad-mini
@@ -28,6 +28,11 @@ cd openwrt-sdk-ar71xx-*
 
 # Clone 项目
 git clone https://github.com/max0y/luci-app-cd8021x.git package/luci-app-cd8021x
+
+# 编译 po2lmo (如果已安装po2lmo可跳过)
+pushd package/luci-app-cd8021x/tool/po2lmo
+make && sudo make install
+popd
 
 # 运行make menuconfig，选择要编译的包 LuCI -> 3. Applications
 make menuconfig
