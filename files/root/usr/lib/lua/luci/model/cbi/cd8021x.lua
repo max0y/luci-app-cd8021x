@@ -10,7 +10,7 @@ local eap_list = {
 }
 
 m = Map("cd8021x", translate("802.1x Client"), 
-    translate("Configure IEEE 802.1x wired authentication, you may need to edit your WAN interface protocol as <i>DHCP client</i>  <a href=\"network\">here</a>."))
+    translate("Configure IEEE 802.1x wired authentication, you may need to edit your WAN interface protocol as <i>DHCP</i> client <a href=\"network\">here</a>"))
 
 s = m:section(TypedSection, "login", "")
 s.addremove = false
