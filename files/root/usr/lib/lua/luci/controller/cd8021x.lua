@@ -4,5 +4,5 @@
 module("luci.controller.cd8021x", package.seeall)
 
 function index()
-        entry({"admin", "network", "cd8021x"}, cbi("cd8021x"), _("cd802.1x client"), 100).dependent = true
+        entry({"admin", "network", "cd8021x"}, cbi("cd8021x"), _("802.1x Client"), 100).dependent = true
         end
